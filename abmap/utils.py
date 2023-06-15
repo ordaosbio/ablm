@@ -85,7 +85,7 @@ def get_boolean_mask(sequence, chain_type, scheme, buffer_region, dev, fold=0,
     
     
     # Output ANARCI file for an individual sequence
-    temp_name = os.path.join(anarci_dir, 'temp{}'.format(dev))
+    temp_name = os.path.join(anarci_dir, seqeuence[:250])
     os.system('ANARCI -i {} --csv -o {} -s {}'.format(sequence, temp_name, scheme))
     # NOTE - add verbose option?
     # print(temp_name)
