@@ -98,9 +98,9 @@ def get_boolean_mask(sequence, chain_type, scheme, buffer_region, dev, fold=0,
     # Find filename of ANARCI output
     try:
         if chain_type == 'H':
-            file_name = glob.glob(os.path.join(anarci_dir, f'*{dev}_H.csv'))[0]
+            file_name = glob.glob(os.path.join(anarci_dir, f'*{sequence[:250]}_H.csv'))[0]
         else:
-            file_name = glob.glob(os.path.join(anarci_dir, f'*{dev}_KL.csv'))[0]
+            file_name = glob.glob(os.path.join(anarci_dir, f'*{sequence[:250]}_KL.csv'))[0]
         temp = pd.read_csv(file_name)
     except:
         print("Can't READ this file! file name is: {}".format(file_name))
